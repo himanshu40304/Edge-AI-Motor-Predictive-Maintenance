@@ -8,26 +8,6 @@ Vibration data from an MPU-6050 MEMS accelerometer is processed through a DSP pi
 
 ---
 
-## Demo & Screenshots
-
-### Circuit Diagram
-<!-- Upload your circuit diagram image and replace the path below -->
-![Circuit Diagram](images/circuit_diagram.png)
-
-### Hardware Photo
-<!-- Upload a photo of your assembled hardware and replace the path below -->
-![Hardware Photo](images/hardware_photo.jpg)
-
-### Node-RED Dashboard
-<!-- Upload a screenshot of your Node-RED dashboard and replace the path below -->
-![Node-RED Dashboard](images/nodered_dashboard.png)
-
-### Serial Monitor Output
-<!-- Upload a screenshot of the serial monitor output and replace the path below -->
-![Serial Monitor Output](images/serial_monitor.png)
-
----
-
 ## System Architecture
 
 ```
@@ -50,6 +30,61 @@ MPU-6050 (100 Hz)
               └─ MQTT Task (Priority 1)
                     WiFi → broker.hivemq.com → Node-RED dashboard
 ```
+
+---
+
+## Motor States & Results
+
+### Normal Operation
+Motor running freely with no added weight — balanced rotation, high health index.
+
+| Motor | Dashboard |
+|:---:|:---:|
+| ![Motor Normal](images/motor_normal.jpeg) | ![Dashboard Normal](images/dashboard_normal.jpeg) |
+
+**Health Index: 98.9 / 100** — RMS Mag: 5.543 m/s² · Peak Freq: 32.0 Hz · Spectral Entropy: 0.871
+
+---
+
+### Motor Stopped
+Motor powered off — no vibration, health index drops to zero.
+
+| Motor | Dashboard |
+|:---:|:---:|
+| ![Motor Stopped](images/motor_stopped.jpeg) | ![Dashboard Stopped](images/dashboard_stopped.jpeg) |
+
+**Health Index: 0 / 100** — RMS Mag: 0.026 m/s² · Peak Freq: 10.9 Hz · Spectral Entropy: 0.963
+
+---
+
+### Minor Unbalance
+One small weight added to one blade — slight vibration increase, moderate health drop.
+
+| Motor | Dashboard |
+|:---:|:---:|
+| ![Motor Minor Unbalance](images/motor_minor_unbalance.jpeg) | ![Dashboard Minor Unbalance](images/dashboard_minor_unbalance.jpeg) |
+
+**Health Index: 27 / 100** — RMS Mag: 7.792 m/s² · Peak Freq: 19.9 Hz · Spectral Entropy: 0.821
+
+---
+
+### Major Unbalance
+Two large weights added to two blades — severe vibration, health index critically low.
+
+| Motor | Dashboard |
+|:---:|:---:|
+| ![Motor Major Unbalance](images/motor_major_unbalance.jpeg) | ![Dashboard Major Unbalance](images/dashboard_major_unbalance.jpeg) |
+
+**Health Index: 21.6 / 100** — RMS Mag: 9.728 m/s² · Peak Freq: 18.0 Hz · Spectral Entropy: 0.798
+
+---
+
+## Demo Video
+
+<!-- Upload your demo video to YouTube and replace YOUR_VIDEO_ID below -->
+[![Demo Video](images/motor_normal.jpeg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+
+> Click the image above to watch the full demo video
 
 ---
 
