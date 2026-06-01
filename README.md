@@ -81,10 +81,7 @@ Two large weights added to two blades — severe vibration, health index critica
 
 ## Demo Video
 
-<!-- Upload your demo video to YouTube and replace YOUR_VIDEO_ID below -->
-[![Demo Video](images/motor_normal.jpeg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
-
-> Click the image above to watch the full demo video
+*Coming soon — link will be added once available.*
 
 ---
 
